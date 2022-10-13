@@ -1,5 +1,7 @@
 package com.jakubmikula.jparelationships.domain;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,4 +24,7 @@ public class Recipe {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients;
 }
