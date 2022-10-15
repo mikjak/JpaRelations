@@ -4,7 +4,12 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Recipe {
 
     @Id
@@ -16,6 +21,7 @@ public class Recipe {
     private Integer servings;
     private String source;
     private String url;
+    @Lob
     private String directions;
     //todo add
     //private Difficulty difficulty;
